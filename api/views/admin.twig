@@ -1,0 +1,92 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+  Administration - Joshue | Crescendo
+{% endblock %}
+
+{% block body %}
+  <div class="w-11/12 sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2 py-4 md:py-10 mx-auto">
+    <h3 class="text-center text-2xl text-white tracking-wide">
+      Welcome back <strong class="text-teal-500">Joshue L. Abance</strong>
+    </h3>
+
+    <hr class="my-4" />
+
+    <!-- form -->
+    <div class="p-2">
+      <h3 class="text-center text-teal-600 text-lg font-bold tracking-wide underline mb-6">
+        Create new post?
+      </h3>
+
+      {% if errors %}
+        <div class="py-2 text-center">
+          {% for error in errors.errors %}
+            <p class="text-red-500 my-1">
+              {{ error.msg }}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if success %}
+        <div class="py-2 text-center">
+          <p class="text-teal-500">
+            {{ success }}
+          </p>
+        </div>
+      {% endif %}
+
+      <form action="" method="POST">
+        <div class="flex flex-col my-1">
+          <label for="" class="text-white">How do you feel?</label>
+          <div class="w-full relative">
+            <textarea id="post-content"
+              name="post-content"
+              class="h-32 w-full rounded bg-gray-800 text-white border-2 border-gray-700 py-2 px-3 text-xl focus:border-teal-600 focus:text-teal-600 font-light tracking-wide focus:outline-none"
+              placeholder="Post something about what you feel or what you want..."></textarea>
+            <button id="trigger-emote"
+              type="button"
+              class="absolute top-0 right-0 mt-1 mr-1"
+              title="Select Emoji">
+              <img src="/happy.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col my-1">
+          <input type="submit"
+            value="Post"
+            class="w-1/2 mx-auto py-2 rounded bg-teal-600 text-white uppercase hover:bg-teal-700 cursor-pointer" />
+        </div>
+      </form>
+    </div>
+
+    <hr class="my-6 border-gray-600" />
+
+    <h3 class="text-white">
+      Recent Posts
+    </h3>
+    <!-- posts container -->
+    <div class="p-2">
+      {% for post in posts %}
+        <!-- post -->
+        <div class="my-4">
+          <div class="bg-teal-800 py-2 px-3 flex text-sm text-gray-400 rounded-t">
+            <h4 class="font-bold tracking-wide">
+              {{ post.uname }}
+            </h4><span class="mx-1">|</span><p class="truncate">
+              {{ post.date }}
+            </p>
+          </div>
+          <div class="bg-teal-700 text-center p-3 text-2xl text-white font-bold tracking-wide rounded-b">
+            {{ post.content }}
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+{% endblock %}
+
+{% block emote %}
+  <!-- js for using emotes -->
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+  <script src="/js/emote.js"></script>
+{% endblock %}

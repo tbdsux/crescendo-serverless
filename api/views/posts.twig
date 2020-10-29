@@ -1,0 +1,58 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+  Joshue's Private Tweets | Crescendo
+{% endblock %}
+
+{% block body %}
+  <div class="w-11/12 sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2 py-4 md:py-10 mx-auto">
+    <h1 class="text-center text-teal-600 font-black text-3xl tracking-wide mb-6 sm:mb-2">
+      Crescendo
+    </h1>
+    <div>
+      <!-- about me -->
+      <div class="flex items-center justify-center">
+        <img src="profile.png"
+          alt=""
+          class="h-24 w-24 object-cover object-center rounded-full" />
+        <div class="ml-4">
+          <h3 class="text-teal-500 font-bold tracking-wide">
+            About Me
+          </h3>
+          <p class="font-light tracking-wide text-white">
+            I am just a simple, shy and introverted person and I just made <br class="hidden md:block" />this
+            app for fun. :) <span class="italic">( Joshue Abance )</span>
+          </p>
+        </div>
+      </div>
+
+      <hr class="mt-6 mb-4" />
+
+      <!-- recent tweets -->
+      <div class="">
+        <h3 class="text-white">
+          Recent Tweets
+        </h3>
+
+        <!-- posts container -->
+        <div class="p-2">
+          {% for post in posts %}
+            <!-- post -->
+            <div class="my-4">
+              <div class="bg-teal-800 py-2 px-3 flex text-sm text-gray-400 rounded-t">
+                <h4 class="font-bold tracking-wide">
+                  {{ post.uname }}
+                </h4><span class="mx-1">|</span><p class="truncate">
+                  {{ post.date }}
+                </p>
+              </div>
+              <div class="bg-teal-700 text-center p-3 text-2xl text-white font-bold tracking-wide rounded-b">
+                {{ post.content }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
