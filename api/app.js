@@ -49,7 +49,7 @@ app.get('/tweets', async (req, res) => {
   const posts = db.collection('PrivateTweets')
   posts
     .find()
-    .sort({ date: -1 })
+    .sort({ datetime: -1 })
     .toArray((err, posts) => {
       res.render('posts', { posts, posts })
     })
@@ -64,7 +64,7 @@ app.get('/' + process.env.ADMIN_DASH.trim(), async (req, res) => {
   const posts = db.collection('PrivateTweets')
   posts
     .find()
-    .sort({ date: -1 })
+    .sort({ datetime: -1 })
     .toArray((err, posts) => {
       res.render('admin', { posts: posts })
     })
@@ -96,6 +96,7 @@ app.post(
           .tz(process.env.TIMEZONE.trim())
           .format('MMMM Do YYYY, h:mm:ss a'),
         uname: process.env.POST_UNAME.trim(),
+        datetime: moment().tz(process.env.TIMEZONE.trim()).format(),
       }
 
       // insert to the database
