@@ -26,7 +26,7 @@
     "mongodb": "^3.6.2",
     "passport": "^0.4.1",
     "postcss-cli": "^8.1.0",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^14.0.0",
     "tailwindcss": "^1.8.13",
     "twig": "^1.15.2"
   },
