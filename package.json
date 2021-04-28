@@ -14,7 +14,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@joeattardi/emoji-button": "^4.2.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.0",
     "body-parser": "^1.19.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
