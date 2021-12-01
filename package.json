@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@joeattardi/emoji-button": "^4.2.0",
+    "@joeattardi/emoji-button": "^4.6.2",
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.19.0",
     "cssnano": "^4.1.10",
