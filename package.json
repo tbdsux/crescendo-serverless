@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
     "http-errors": "^1.8.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.31",
     "mongodb": "^3.6.2",
     "passport": "^0.4.1",
